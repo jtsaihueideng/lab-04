@@ -51,6 +51,6 @@ if __name__ == '__main__':
         local_time = time.ctime(time.time())
         #publish date and time in their own topics
         """your code here"""
-        client.publish("date/time",f"{local_time}")
+        client.publish("julieden/timeinfo",f"{local_time}")
         print(local_time)
         time.sleep(4)
