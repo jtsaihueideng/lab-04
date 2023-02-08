@@ -52,3 +52,5 @@ if __name__ == '__main__':
         #publish date and time in their own topics
         """your code here"""
         client.publish("date/time",f"{local_time}")
+        print(local_time)
+        time.sleep(4)
