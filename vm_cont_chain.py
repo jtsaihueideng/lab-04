@@ -10,13 +10,13 @@ def on_connect(client, userdata, flags, rc):
    
 def on_message(client, userdata, msg):
     print("Default callback - topic: " + msg.topic + "   msg: " + str(msg.payload, "utf-8"))
+ 
+def on_message_from_ping(client, userdata, message):
+    print("Custom callback  - PING: "+message.payload.decode())
     inp = int(msg.payload, "utf-8")
     print("Input: " + inp)
     client.publish("julieden/pong",f"{inp + 1}")
     print("Publishing number")
- 
-def on_message_from_ping(client, userdata, message):
-    print("Custom callback  - PING: "+message.payload.decode())
 
 
 if __name__ == '__main__':
