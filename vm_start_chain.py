@@ -14,7 +14,6 @@ def on_message(client, userdata, msg):
 def on_message_from_pong(client, userdata, message):
     print("Custom callback  - PONG: "+message.payload.decode())
     inp = int(message.payload.decode())
-    print(inp)
     client.publish("julieden/ping",f"{inp + 1}")
     print("Publishing number")
 
@@ -34,13 +33,7 @@ if __name__ == '__main__':
     client.publish("julieden/ping",f"{inp}")
     while True:
       client.on_connect = on_connect
-      """
-      client.publish("julieden/ping",f"{inp+1}")
-      print("Publishing number")
       time.sleep(4)
-      client.on_message = on_message
-      """
-   #   client.connect(host="172.20.10.4", port=10000, keepalive=60)
       
       
       
