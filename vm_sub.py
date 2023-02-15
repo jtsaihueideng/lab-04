@@ -19,6 +19,7 @@ def on_connect(client, userdata, flags, rc):
     
     #Add the custom callbacks by indicating the topic and the name of the callback handle
     client.message_callback_add("julieden/ipinfo", on_message_from_ipinfo)
+    client.message_callback_add("julieden/dateinfo",on_message_from_dateinfo)
     client.message_callback_add("julieden/timeinfo",on_message_from_timeinfo)
 
 
@@ -32,6 +33,9 @@ def on_message(client, userdata, msg):
 #Custom message callback.
 def on_message_from_ipinfo(client, userdata, message):
    print("Custom callback  - IP Message: "+message.payload.decode())
+
+def on_message_from_dateinfo(client, userdata, message):
+   print("Custom callback - Date: "+message.payload.decode())
 
 def on_message_from_timeinfo(client,userdata,message):
    print("Custom callback  - Time Message: "+message.payload.decode())
