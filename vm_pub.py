@@ -48,7 +48,8 @@ if __name__ == '__main__':
 
         #get date and time 
         """your code here"""
-        local_time = time.ctime(time.time())
+        local_time = datetime.now()
+        local_time = local_time.strftime("%H:%M:%S")
         #publish date and time in their own topics
         """your code here"""
         client.publish("julieden/timeinfo",f"{local_time}")
