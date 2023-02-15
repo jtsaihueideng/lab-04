@@ -13,7 +13,7 @@ def on_message(client, userdata, msg):
  
 def on_message_from_ping(client, userdata, message):
     print("Custom callback  - PING: "+message.payload.decode())
-    inp = int(msg.payload, "utf-8")
+    inp = int(message.payload, "utf-8")
     print("Input: " + inp)
     client.publish("julieden/pong",f"{inp + 1}")
     print("Publishing number")
@@ -25,10 +25,8 @@ if __name__ == '__main__':
     client = mqtt.Client()
     
     client.on_connect = on_connect
-    
-    
-    
-    client.on_message = on_message
+   
+    #client.on_message = on_message
     client.connect(host="172.20.10.4", port=1883, keepalive=60)
     time.sleep(4)
     """
