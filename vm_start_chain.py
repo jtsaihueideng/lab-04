@@ -23,14 +23,14 @@ if __name__ == '__main__':
     
     client.loop_start()
     time.sleep(1)
-    
+    inp = input("Enter number: ")
     while True:
-      inp = input("Enter number: ")
       client.publish("julieden/ping",f"{inp}")
       print("Publishing number")
       time.sleep(4)
       client.on_message = on_message
       client.connect(host="172.20.10.4", port=10000, keepalive=60)
+      
       
       
 
