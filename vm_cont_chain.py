@@ -14,7 +14,7 @@ def on_message(client, userdata, msg):
 def on_message_from_ping(client, userdata, message):
     print("Custom callback  - PING: "+message.payload.decode())
     inp = int(message.payload.decode())
-    print("Input: " + inp)
+    print(inp)
     client.publish("julieden/pong",f"{inp + 1}")
     print("Publishing number")
 
