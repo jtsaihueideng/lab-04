@@ -24,7 +24,7 @@ if __name__ == '__main__':
     client.loop_start()
     time.sleep(1)
     inp = input("Enter number: ")
-    inpt = inp-1
+    inp = inp-1
     while True:
       client.publish("julieden/ping",f"{inp+1}")
       print("Publishing number")
