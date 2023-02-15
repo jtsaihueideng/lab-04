@@ -49,14 +49,14 @@ if __name__ == '__main__':
         #get date and time 
         """your code here"""
         local_time = datetime.now()
-        time = local_time.strftime("%H:%M:%S")
+        t = local_time.strftime("%H:%M:%S")
         local_date = local_time.strftime("%d/%m/%Y")
         
         #publish date and time in their own topics
         """your code here"""
-        client.publish("julieden/timeinfo",f"{time}")
+        client.publish("julieden/timeinfo",f"{t}")
         print(time)
-        client.publish("julieden/dateinfo",f"{date}")
+        client.publish("julieden/dateinfo",f"{local_date}")
         print(local_date)
         
         time.sleep(4)
