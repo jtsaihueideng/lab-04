@@ -21,18 +21,18 @@ if __name__ == '__main__':
     
     client.on_connect = on_connect
     
-    client.connect(host="172.20.10.4", port=10000, keepalive=60)
+    client.connect(host="172.20.10.4", port=1883, keepalive=60)
     
     client.loop_start()
     time.sleep(1)
     inp = input("Enter number: ")
-    inp = inp-1
+    inp = int(inp)-1
     while True:
       client.publish("julieden/ping",f"{inp+1}")
       print("Publishing number")
       time.sleep(4)
       client.on_message = on_message
-      client.connect(host="172.20.10.4", port=10000, keepalive=60)
+   #   client.connect(host="172.20.10.4", port=10000, keepalive=60)
       
       
       
