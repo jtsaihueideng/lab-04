@@ -25,11 +25,11 @@ if __name__ == '__main__':
     client.loop_start()
     time.sleep(1)
     
-    while True:
-      client.on_message = on_message
-      client.connect(host="172.20.10.4", port=10000, keepalive=60)
-      time.sleep(4)
-      inp = input("Enter number: ")
-      client.publish("julieden/pong",f"{inp}")
-      print("Publishing number")
+    client.on_message = on_message
+    client.connect(host="172.20.10.4", port=10000, keepalive=60)
+    time.sleep(4)
+    client.publish("julieden/pong",f"{inp}")
+    print("Publishing number")
+    
+    client.loop_forever()
       
