@@ -31,6 +31,7 @@ if __name__ == '__main__':
     time.sleep(1)
     inp = input("Enter number: ")
     inp = int(inp)-1
+    client.publish("julieden/ping",f"{inp}")
     while True:
       client.on_connect = on_connect
       """
