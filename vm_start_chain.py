@@ -33,7 +33,7 @@ if __name__ == '__main__':
     client.publish("julieden/ping",f"{inp}")
     while True:
       client.on_connect = on_connect
-      time.sleep(4)
+      #time.sleep(4)
       
       
       
